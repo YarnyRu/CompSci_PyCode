@@ -1,0 +1,34 @@
+// SCREEN TIME Paper 22 March 2024
+
+// Initialise variables
+WeekLength <- 5
+LowestMinutes <- 1000
+ClassTotal <- 0
+
+FOR StudentCounter <-1 to ClassSize // loop for each student
+    Total <-0
+    DaysOver300 <-0
+    FOR DayCounter <-1 to WeekLength // loop for each day
+        REPEAT
+            OUTPUT "Please enter number of minutes for day ", DayCounter
+            INPUT Minutes
+        UNTIL Minutes >= 0           // Validate minutes, range check
+        ScreenTime[StudentCounter, DayCounter] <- Minutes
+        Total <-Total + Minutes
+        IF Minutes > 300 THEN
+            DaysOver300 <-DaysOver300 + 1
+        ENDIF
+        IF Minutes < LowestMinutes THEN
+            LowestMinutes <-Minutes
+            LowestIndex <-StudentCounter
+        ENDIF
+    NEXT DayCounter
+    OUTPUT StudentName[StudentCounter]
+    OUTPUT "Screen time ", DIV(Total, 60), " hours ", MOD(Total, 60), " minutes "
+    OUTPUT "Days with more than 300 minutes screen time ", DaysOver300
+    ClassTotal <-ClassTotal + Total
+NEXT StudentCounter
+
+// Print results at the end of the program
+OUTPUT "Average weekly screen time for class ", ClassTotal / ClassSize, " minutes "
+OUTPUT "Lowest weekly time ", StudentNames[LowestIndex]

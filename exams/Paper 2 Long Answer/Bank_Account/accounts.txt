@@ -1,0 +1,6 @@
+#Paper 22 Summer 23 - Bank Account Details
+# Account["String"] to contain name and password, AccDetails[] to contain balance[0], overdraft limit[1], withdrawal limit[2]
+# Size contains the number of account holders
+Bob		Bob1		31.40	100.0	200.0
+Jim		Jimminy		295.32	100.0	200.0
+Fred	Froggins	89.67	100.0	200.0

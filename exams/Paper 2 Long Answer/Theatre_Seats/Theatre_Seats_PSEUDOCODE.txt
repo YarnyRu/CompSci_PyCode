@@ -1,0 +1,42 @@
+// Count total number of seats already booked
+SeatsBooked <- 0
+FOR row <- 1 TO 10		// Check every seat in the theatre
+    FOR seat <- 1 TO 20
+        IF Evening[row, seat] = TRUE THEN
+            SeatsBooked <- SeatsBooked + 1		// Tally up seats booked
+        ENDIF
+    NEXT seat
+NEXT row
+OUTPUT "There are", SeatsBooked, "seats booked"
+
+// Ask user to enter how many seats to book
+OUTPUT "Enter the number of seats required (1-4): "
+REPEAT						// Validate number of seats input
+    INPUT Number
+UNTIL Number > 0 AND Number <= 4
+
+BookingMade <- FALSE		// To keep track of whether the booking has been made
+FOR row <- 1 TO 10			// Check for available seats
+    FOR seat <- 1 TO 20
+        IF BookingMade = FALSE THEN					// This seat is available for booking
+            IF Evening[row, seat] = FALSE THEN
+                // Start checking for consecutive seats
+                IF seat + Number - 1 <= 20 THEN		// Seats can be booked on this row
+                    BookingMade <- TRUE				// This ensures seats are only booked once
+                    FOR i <- 1 TO Number			// For each seat to be booked
+                        Evening[row, seat + i - 1] <- TRUE
+                        OUTPUT "Seat", seat + i - 1, "in row", row, "is booked"
+                    NEXT i							// Repeat for each seat to be booked
+                ENDIF
+            ENDIF
+        ENDIF
+    NEXT seat
+NEXT row
+
+IF SeatsBooked = 200 THEN					// No more seats available
+    OUTPUT "House full"
+ELSE
+    IF BookingMade = FALSE THEN				// Seats were not available together, or insufficient seats remaining
+        OUTPUT "There are only", 200 - SeatsBooked, "seats available"
+    ENDIF
+ENDIF

@@ -1,0 +1,15 @@
+#Santa's List
+Bob		nice
+Billy	naughty
+Fred	naughty
+Jill	nice
+Sam		nice
+Pete	naughty
+Alex	nice
+Una		naughty
+Mabel	nice
+Flo		nice
+Jim		nice
+Tom		naughty
+Max		naughty
+Sid		nice

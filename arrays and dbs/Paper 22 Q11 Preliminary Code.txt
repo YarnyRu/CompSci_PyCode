@@ -1,0 +1,25 @@
+# March 2023 Paper 22 Long Answer question
+# This first part you DO NOT NEED TO DO in the exam
+LeagueSize = 3
+MatchNo = 4
+TeamName = [""] * LeagueSize
+print(TeamName)
+TeamPoints = [[0 for x in range(MatchNo)] for y in range(LeagueSize)]
+print(TeamPoints)
+
+# Open file
+with open("match_scores.txt") as f:
+ 
+# Read in one line at a time
+  League = 0
+  for line in f:
+    print(line)
+    line = line.strip()
+    temp_input = line.split()
+    print(temp_input)
+    for Count in range (0, MatchNo):
+      TeamPoints[League][Count] = int(temp_input[Count])
+    League += 1
+    print(TeamPoints)
+# Start here to write the code to complete the program
+# From here you need to comment your code

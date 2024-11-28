@@ -1,0 +1,10 @@
+# Catan Board Gamer's High Score Program
+# Read in a score from the user (number / integer)
+
+# IF score is the highest score EVER, print out a "Wow!" message
+
+# IF score is greater than <average>, print out praise message
+
+# IF score is greater than <minimum>, print out encouragement message
+
+# Add a 'default' catch-all statement for any other situation, with a suitable message

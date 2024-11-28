@@ -1,0 +1,6 @@
+Earthling   friendly
+Martian     friendly
+Dalek       scary
+Vogon       scary
+ET          friendly
+Klingon     scary

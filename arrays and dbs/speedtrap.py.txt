@@ -1,0 +1,19 @@
+# Speedtrap Alert!
+# A program to investigate "Do owners of newer cars tend to speed more?"
+# Reads in from speeds.txt one line at a time
+# Calculates whether each car was speeding or not
+# Reads number plate to work out the age of the car
+
+number_plates = [""] * 6
+speeds = [""] * 6
+line_num = 0
+with open('speeds.txt', 'r') as file_nickname:
+  for line in file_nickname:
+    line = line.strip()
+    elements = line.split()
+    print("Car", elements[0], "was travelling at", elements[1], "mph")
+    number_plates[line_num] = elements[0]
+    speeds[line_num] = elements[1]
+    # Add in code here to check speed and age of car
+    line_num += 1
+

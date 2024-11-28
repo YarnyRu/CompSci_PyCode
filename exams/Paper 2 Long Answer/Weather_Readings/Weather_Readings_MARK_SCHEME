@@ -1,0 +1,66 @@
+// Paper 2 Long Answer Summer 2022, Paper 21
+// Example 15 mark answer in pseudocode
+// meaningful identifiers and appropriate data structures for
+// all data required
+
+// Diana's comment - the question clearly stated variables and arrays do NOT need to be declared, 
+// so I can only assume this is here 'for completeness' to show how it would be done
+
+DECLARE Days : ARRAY[1:7] OF STRING
+DECLARE Readings : ARRAY[1:7, 1:24] OF REAL
+DECLARE AverageTemp : ARRAY[1:7] OF REAL
+DECLARE WeekLoop : INTEGER
+DECLARE DayLoop : INTEGER
+DECLARE InTemp : REAL
+DECLARE TotalDayTemp : REAL
+DECLARE TotalWeekTemp : REAL
+DECLARE AverageWeekTemp : REAL
+
+// Initialisation of Days[] array
+// Diana's comment - this IS needed for this question, but you could use Mon-Sun or anything similar
+
+Days[1] <- "Sunday"
+Days[2] <- "Monday"
+Days[3] <- "Tuesday"
+Days[4] <- "Wednesday"
+Days[5] <- "Thursday"
+Days[6] <- "Friday"
+Days[7] <- "Saturday"
+
+// Input temperatures inside nested loop
+// Diana's comment - for any 2D array you will need two 'nested' loops to iterate through all the data
+
+FOR WeekLoop <- 1 TO 7
+    TotalDayTemp <- 0
+    FOR DayLoop <- 1 TO 24
+        OUTPUT "Enter temperature ", DayLoop, " for ", Days[WeekLoop]
+        INPUT InTemp
+        // validation of input for between -20 and +50 inclusive
+        WHILE InTemp < -20.0 OR InTemp > 50.0 DO
+            OUTPUT "Your temperature must be between -20.0 and +50.0 inclusive. Please try again"
+            INPUT InTemp
+        ENDWHILE
+        Readings[WeekLoop, DayLoop] <- InTemp
+
+        // totalling of temperatures during the day
+        TotalDayTemp <- TotalDayTemp + ROUND(InTemp, 1)
+    NEXT DayLoop
+
+    // average temperature for the day
+    AverageTemp[WeekLoop] <- ROUND(TotalDayTemp / 24,1)
+NEXT WeekLoop
+
+// calculate the average temperature for the week
+TotalWeekTemp <- 0
+FOR WeekLoop <- 1 TO 7
+    TotalWeekTemp <- TotalWeekTemp + AverageTemp[WeekLoop]
+NEXT WeekLoop
+AverageWeekTemp <- ROUND(TotalWeekTemp / 7,1)
+
+// outputs in Celsius and Fahrenheit
+FOR WeekLoop <- 1 TO 7
+    OUTPUT "The average temperature on ", Days[WeekLoop], " was ", AverageTemp[WeekLoop],
+        "Celsius and ", ROUND(AverageWeekTemp * 9 / 5 + 32), 1, " Fahrenheit"
+NEXT WeekLoop
+OUTPUT "The average temperature for the week was ",
+AverageWeekTemp," Celsius and ", ROUND(AverageWeekTemp * 9 / 5 + 32, 1),"Fahrenheit"

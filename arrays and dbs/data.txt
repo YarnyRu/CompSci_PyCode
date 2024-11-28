@@ -1,0 +1,6 @@
+# Names   Paper 1  Paper 2
+Jim       49       62
+Fred      55       59
+Bob       62       67
+Sam       53       50
+Bill      68       73

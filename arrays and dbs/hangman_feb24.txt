@@ -1,0 +1,28 @@
+hangman_word = ['b', 'a', 'n', 'a', 'n' ,'a', 's']
+answer = ['_', '_', '_', '_', '_', '_', '_']
+underscores = len(hangman_word)
+print("The secret word to guess is", underscores, "letters long")
+turns_taken = 0
+max_turns = 5
+while underscores > 0 and turns_taken < max_turns:
+    print(answer)
+    letter_count = 0
+    user_entry = input('what letter would you like to search for ')   
+    letter_found = False
+    for i in range(0,7):        # for each letter in the word, repeat the following
+        if hangman_word[i] == user_entry:  # Enter this statement only if the user has guessed correctly
+            if answer[i] == '_':
+                answer[i] = user_entry
+                underscores = underscores - 1
+                letter_found = True
+                if underscores == 0:
+                    print('You guessed correctly')
+                else:
+                  print("You still need to guess", underscores, "letters")
+    if letter_found == False:      # The letter is not in the word
+      print("Sorry,", user_entry, "is not in this word")
+      turns_taken = turns_taken + 1    # Incrementing turns_taken
+      turns_remaining = max_turns - turns_taken
+      print("You have", turns_remaining, "turns remaining")
+if underscores > 0:
+    print('You did not guess the word which was', hangman_word)

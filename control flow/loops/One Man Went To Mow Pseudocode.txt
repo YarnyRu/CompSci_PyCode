@@ -1,0 +1,15 @@
+#One Man Went to Mow Challenge PSEUDOCODE
+repeat <- 1
+INPUT length
+FOR men <- 1 TO length + 1
+  IF men = 1 THEN PRINT men, "man went to mow, went to mow a meadow"
+  ELSE PRINT men, "men went to mow, went to mow a meadow"
+  ENDIF
+  FOR num <- repeat TO 0 STEP -1
+    IF num = 1 THEN PRINT num, "man,", end = " "
+    ELSE PRINT num, "men,", end = " "
+    ENDIF
+  PRINT "and his dog, Spot, went to mow a meadow"
+  repeat = repeat + 1
+  NEXT num
+NEXT men

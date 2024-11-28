@@ -1,0 +1,18 @@
+# Using Boolean variables
+carry_on = True   # Boolean flag
+while carry_on == True:
+  reply = input("Is the light selector on or off? ")
+  if reply == 'on':
+    light_s = True
+  else:
+    light_s = False
+
+  wall = True
+  if light_s and wall:
+    print("Fairy lights are on - hooray!")
+  else:
+    print("It's dark in here....")
+  c_on = input("Would you like to carry on? y/n ")
+  if c_on == 'n':
+    carry_on = False
+   

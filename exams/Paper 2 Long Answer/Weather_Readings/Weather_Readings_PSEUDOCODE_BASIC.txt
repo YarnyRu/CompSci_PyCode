@@ -1,0 +1,45 @@
+// PSEUDOCODE Paper 2 Long Answer - Weather Readings
+// Basic solution - no frills
+
+// Populate array
+Days[1] <- "Mon"
+Days[2] <- "Tue"
+Days[3] <- "Wed"
+Days[4] <- "Thu"
+Days[5] <- "Fri"
+Days[6] <- "Sat"
+Days[7] <- "Sun"
+
+// Input and validate the temperatures for one week
+FOR day <- 1 TO 7
+    FOR hour <- 1 TO 24
+        REPEAT
+            "Please enter temperature: "
+            INPUT InTemp
+        UNTIL InTemp >= -20.0 AND InTemp <= 50.0
+        Readings[day][hour] <- InTemp
+    NEXT hour
+NEXT day
+
+// Average daily temperature calculations
+FOR day <- 1 TO 7
+    running_total <- 0.0		// Reset a variable to hold the running total
+    FOR hour <- 1 TO 24
+        running_total <- running_total + Readings[day][hour]		// Create a running total of all the temperatures
+    NEXT hour
+    AverageTemp[day] <- running_total / 24					// Calculate mean average
+    temp_in_F <- (AverageTemp[day] * 9 / 5) + 32			// Convert to Fahrenheit
+    PRINT "Average temperature for", Days[day], "is", ROUND(AverageTemp[day], 1), "degrees Celsius, or",
+          ROUND(temp_in_F, 1), "degrees Fahrenheit"
+NEXT day   
+
+// Weekly average calculations
+total_of_averages <- 0.0
+FOR day <- 1 TO 7
+    total_of_averages = total_of_averages + AverageTemp[day]
+NEXT Day
+weekly_average <- total_of_averages/7
+weekly_average_in_F <- (weekly_average * 9 / 5) + 32
+PRINT "The weekly average temperature was", ROUND(weekly_average, 1), "degrees Celsius, or",
+      ROUND(weekly_average_in_F, 1), "degrees Fahrenheit"
+

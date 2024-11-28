@@ -1,0 +1,37 @@
+// March 2023 Paper 22 Long Answer question
+
+FOR TeamCount <- 1 TO LeagueSize
+    TotalPoints[TeamCount] <- 0		// Reset to zero the totals for each club’s result details
+    AwayWinNo <- 0 
+    HomeWinNo <- 0
+    DrawNo <- 0
+    LostNo <- 0
+    FOR MatchCount <- 1 TO MatchNo
+        TotalPoints[TeamCount] <- TotalPoints[TeamCount] + TeamPoints[TeamCount, MatchCount]
+        CASE OF TeamPoints[TeamCount, MatchCount]
+            3 : AwayWinNo <- AwayWinNo + 1
+            2 : HomeWinNo <- HomeWinNo + 1
+            1 : DrawNo <- DrawNo + 1
+            0 : LostNo <- LostNo + 1
+        ENDCASE
+    NEXT MatchCount
+    // Output details of each team’s results
+    OUTPUT "Team ", TeamName[TeamCount], "Total points ", TotalResult[TeamCount]
+    OUTPUT "Away wins ", AwayWinNo, "Home wins ", HomeWinNo, "Draws ", DrawNo, "Losses ", LostNo
+    // Check for highest and lowest results
+    IF TeamCount = 1 THEN
+        HighestResult <- TotalPoints[TeamCount]
+        LowestResult <- TotalPoints[TeamCount]
+    ENDIF
+    IF TotalPoints[TeamCount] > HighestResult THEN
+        HighestResult <- TotalPoints[TeamCount]
+        TopTeam <- TeamCount
+    ENDIF
+    IF TotalPoints[TeamCount] < LowestResult THEN
+        LowestResult <- TotalPoints[TeamCount]
+        BottomTeam <- TeamCount
+    ENDIF
+NEXT TeamCount
+// Output names of the teams with the highest and lowest number of points
+OUTPUT "Top Team ", TeamName[TopTeam]
+OUTPUT "Bottom Team ", TeamName[BottomTeam]

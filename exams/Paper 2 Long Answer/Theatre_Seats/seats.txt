@@ -1,0 +1,11 @@
+# Theatre 10 rows of 20 seats
+T T T T T T T T T T T T T T T T T T T T
+T T T T T T T T T T T T T T T T T T T T
+T T T T T T T T T T T T T T T T T F F F
+F F F F F F F F F F F F F F F F F F F F
+F F F F F F F F F F F F F F F F F F F F
+F F F F F F F F F F F F F F F F F F F F
+F F F F F F F F F F F F F F F F F F F F
+F F F F F F F F F F F F F F F F F F F F
+F F F F F F F F F F F F F F F F F F F F
+F F F F F F F F F F F F F F F F F F F F
