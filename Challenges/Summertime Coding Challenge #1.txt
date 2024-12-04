@@ -1,0 +1,15 @@
+Summertime Coding Challenge #1
+
+Write me a program that asks the user what the temperature is today (imagine that in future this could be linked automatically to a Raspberry Pi with a SenseHat that is monitoring the outdoor temperature)
+
+Depending on the answer, the program should either:
+1.	Tell the user that number is not a sensible temperature, and ask them to re-enter a number
+2.	Convert the temperature from Celsius to Fahrenheit if they say they are American
+3.	Depending on the temperature given, suggest appropriate clothing for the day (yes, you can make this funny!)
+	Think about how you will ensure that every sensible temperature entered should have one output phrase
+4.	Ask the user if they would like to update their temperature/enter another reading.
+
+All your interaction with the user should have nicely written prompts, so that the user knows exactly what to type each time.
+Your code should contain comments so that you (and I) can read and understand what you've written in six months' time.
+
+Good luck!

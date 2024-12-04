@@ -1,0 +1,15 @@
+# Milkcart Challenge - level 2
+#
+# You are writing an app for a milkman who has to get up so early in the morning their brain isn't properly working!
+# You need to explain everything in simple terms for this early bird.
+#
+# Using an array such as the one here:
+# MilkRound = [3, 2, 6, 3, 4, 2, 12, 8, 4, 19, 2, 2, 4, 1, 0, 3, 1, 4, 4,]
+#
+# Your program should output the following:
+#	How many bottles of milk are to be delivered today
+#	How many addresses are being delivered to (ignoring those who don't require any)
+#	How many full crates of milk (each crate contains 16 bottles) should be loaded onto the milkcart
+#	How many 'spare' bottles will be on the milkcart (in case of breakages)
+#		You can either use integer division // and modulo arithmetic % or import math and use math.ceil()
+#	Average number of bottles per customer

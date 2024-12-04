@@ -1,0 +1,11 @@
+# Milkcart Challenge - level 1
+#
+# You are writing a program for an app for a milkman who is very sleepy when he gets to work at 4am!
+# You need to explain everything in simple terms for this early bird.
+#
+# Your program should:
+#    Ask the milkman how many pints of milk he needs to deliver for his whole round
+#    Check that this number is within range (more than 0, less than 1024)
+#    Work out how many crates of milk need to be loaded onto the milkcart given that each crate contains 16 pints of milk
+# As a bonus challenge, report to the milkman how many 'spare' milk bottles he will have on his cart, in case of breakages
+# this will be equal to the number of extra bottles in the final crate of milk

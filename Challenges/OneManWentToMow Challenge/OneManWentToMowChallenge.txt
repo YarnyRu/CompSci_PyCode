@@ -1,0 +1,23 @@
+>>> Write a Python program that produces the following lyrics to 'One Man Went To Mow'
+
+How many men are going to mow a meadow? 10
+1 man went to mow, went to mow a meadow,
+1 man and his dog, Spot, went to mow a meadow.
+2 men went to mow, went to mow a meadow,
+2 men, 1 man and his dog, Spot, went to mow a meadow.
+3 men went to mow, went to mow a meadow,
+3 men, 2 men, 1 man and his dog, Spot, went to mow a meadow.
+4 men went to mow, went to mow a meadow,
+4 men, 3 men, 2 men, 1 man and his dog, Spot, went to mow a meadow.
+5 men went to mow, went to mow a meadow,
+5 men, 4 men, 3 men, 2 men, 1 man and his dog, Spot, went to mow a meadow.
+6 men went to mow, went to mow a meadow,
+6 men, 5 men, 4 men, 3 men, 2 men, 1 man and his dog, Spot, went to mow a meadow.
+7 men went to mow, went to mow a meadow,
+7 men, 6 men, 5 men, 4 men, 3 men, 2 men, 1 man and his dog, Spot, went to mow a meadow.
+8 men went to mow, went to mow a meadow,
+8 men, 7 men, 6 men, 5 men, 4 men, 3 men, 2 men, 1 man and his dog, Spot, went to mow a meadow.
+9 men went to mow, went to mow a meadow,
+9 men, 8 men, 7 men, 6 men, 5 men, 4 men, 3 men, 2 men, 1 man and his dog, Spot, went to mow a meadow.
+10 men went to mow, went to mow a meadow,
+10 men, 9 men, 8 men, 7 men, 6 men, 5 men, 4 men, 3 men, 2 men, 1 man and his dog, Spot, went to mow a meadow.

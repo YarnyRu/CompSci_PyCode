@@ -1,0 +1,55 @@
+#Pico Projects
+#1 Get onboard LED switching on
+
+from machine import Pin
+led = Pin('LED', Pin.OUT)
+led.value(1)
+
+#2 Get onboard LED flashing
+
+from machine import Pin
+from time import sleep
+led = Pin('LED', Pin.OUT)
+while True:
+    led.value(1)
+    sleep(0.5)
+    led.value(0)
+    sleep(0.5)
+ 
+#3 Now connect one of the other LEDs (1 to 4) using a jumper (socket to socket)
+
+from machine import Pin
+from time import sleep
+led = Pin('GP18', Pin.OUT)
+while True:
+    led.value(1)
+    sleep(0.5)
+    led.value(0)
+    sleep(0.5)
+
+#4 Now connect a button and make the LED switch on when the button is pressed
+from machine import Pin
+from time import sleep
+led = Pin('GP18', Pin.OUT)
+btn = Pin('GP15', Pin.IN, Pin.PULL_DOWN)
+while True:
+    if btn.value() == 1:
+        led.value(1)
+        sleep(0.5)
+    else
+        led.off()
+
+from machine import Pin
+from time import sleep
+led = Pin('GP18', Pin.OUT)
+btn = Pin('GP15', Pin.IN, Pin.PULL_DOWN)
+led.off()
+LED_Status = False
+while True:
+    if btn.value() == 1:
+        if LED_Status == False:
+            led.value(1)
+            LED_Status = True
+        if LED_Status == True:
+            led.value(0)
+            LED_Status = False
