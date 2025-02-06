@@ -1,0 +1,127 @@
+Using Git and GitHub
+
+Useful links:
+https://education.github.com/git-cheat-sheet-education.pdf
+https://training.github.com/downloads/github-git-cheat-sheet.pdf
+https://docs.github.com/en/get-started/start-your-journey/hello-world
+
+Getting Set Up:
+- GitHub account - 
+	Navigate to https://github.com/.
+	Click Sign up.
+	Follow the prompts to create your personal account
+	Verify your email.
+- Check and Install Git -
+	In terminal/CMD
+		check if you have git installed and if so which version
+		type: git version
+		if it doesn't exist or is out dated the install it
+		open a web browser and download from https://git-scm.com/downloads/win
+- Explore -
+	You now have several ways of accessing git
+	Git Bash gives you terminal where you can type in commands
+	Git GUI gives you a basic program where you can click buttons
+	The terminology is the same for both, I use git Bash.
+- Set up your git config - 
+	In git bash
+	set your user name
+		git config --global user.name "[firstname lastname]"
+	set your email address
+		git config --global user.email "[valid-email]"
+- Linking your computer with GitHub using SSH -
+	In Git Bash type (obviously replace the email with what you used to sign up for GitHub
+		ssh-keygen -t ed25519 -C "your_email@example.com"
+	When you're prompted to "Enter a file in which to save the key", you can press Enter to accept the default file location.
+	At the prompt, type a secure passphrase or leave empty (this is what I do)
+	Now you need to give GitHub your public key.
+		open a browser and navigate to GitHub; login.
+		click your profile picture in the top right corner
+		select 'settings' from the drop-down.
+		on the left sidebar, select SSH and GPG keys
+		click the green 'New SSH key' button
+		Now open the PUB file in C:\Users\{you}\.ssh (from file explorer)
+		copy and paste the contents into the 'key' field on GitHub
+		give it a title e.g. my_laptop, my_desktop.
+		then click the add button at the bottom.
+- Getting the repository onto your computer - *Clone*
+	navigate to the repo on GitHub
+		https://github.com/YarnyRu/CompSci_PyCode
+	Click the green '<> Code' Button
+	select the SSH tab and copy the address starting 'git@github.com:'
+	Now go to git bash
+	change directory to where you want your repo e.g.
+		cd C:\Users\{you}\my_repos
+	then clone the repository, pasting in the address
+		git clone {GitHub address}
+- Do your coding, make changes, etc. -
+	implement good practice when making changes obviously!
+		e.g. small manageable bits of code, only make changes needed for the problem you're working on.
+	and save your code
+- Check the status of the files in the repository (you can do this at any stage in the process)
+- Add files to the staging area and then commit them
+	Adding the files is like putting cupcakes in the display box, you can take them out again, 
+	swap them around, put more sprinkles on, and put them back in. 
+	Committing is like taping up that box and writing the label, 
+	once we do that it's really hard to change what's in the box and we can't get rid of the evidence.
+	Type:
+		git add {relativeFilepath}
+		git commit -m "your commit message which should clearly and concisely describe what changes you've made"
+	The -m adds the message... don't forget this... 
+	if you do you will be sent into a text editor to add the message 
+	and often the editors are tricky to get back out of! :(
+- Now you can make the next set of changes, solve the next problem/issue, make the next bit of the improvement or addition.
+- All of this has only been on your computer, nothing has been communicated with the outside world.
+	Going back to the cupcakes - all those boxes of cakes are still sat in your kitchen;
+	none of your friends have been able to enjoy them yet.
+- At the end of the day, or when you've completed the whole of task, or someone else needs your code:
+	You need to push your code up to GitHub, this is like sending your cupcakes 
+	off to the post office ready for your friends to collect.
+	Type:
+		git push
+- If your friend has made cupcakes and you want to collect them to eat... 
+	You want to fetch code from GitHub
+	Type:
+		git pull
+- If you and your friends are all working on the same code at the same time you might disagree about your code...
+	Bob might want pink cupcakes with blue sprinkles and Bert might want chocolate cakes with gold icing
+	This is called a conflict... and needs to be resolved
+	Usually your repository owner will resolve conflicts for you.
+	It's a bit tricky to explain here, so best to show you this as and when it happens.
+- One good way to help avoid conflicts, keep things running smoothly, 
+  particularly if lots of different issues are being worked at the same time...
+	You might want to have several branches...
+	I think of this like having my cupcake kitchen on a train... 
+	So that the trains that my friends are on don't crash we use different branch lines, 
+	sometimes we go back onto the main line and then branch off again. 
+	But we have signals and a controller to keep us from colliding.
+	- Check which branch you are currently in:
+	(this is where you will branch from - usually you will want to branch from 'main')
+		git status
+	- To change to a different branch:
+		git checkout {branch-name}
+	- To make a new branch: 
+	(pick a name carefully - good names show what is happening on the branch - e.g. bugfix-dateFormat)
+		git branch {branch-name}
+	- If you want to merge branches, it's preferable to do this on GitHub.
+	- If you want to delete a branch - Be careful!!!
+		git branch -d
+
+
+Good Practice:
+- work on small defined changes
+	don't try to do too much all in one go
+	don't do other stuff at the same time
+	e.g. you want to add a new function to multiply but as you're working you notice that your subtract function has a spelling mistake and needs updating throughout your code. You really want to change it but the problem is that then your new function is much harder to review and test.
+
+
+	
+
+
+	
+	
+	
+
+
+	
+		
+		
