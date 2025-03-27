@@ -115,7 +115,24 @@ Good Practice:
 
 
 	
+Using GitHub to help manage packages
+- We can keep installed python packages consistent across machines using a requirements file
+Create or edit the requirements.txt file at the top level of your project. Inside the file is simply a list of the packages that you require and can specify the version of each package. E.G
 
+###### Requirements without Version Specifiers ######
+nose
+nose-cov
+beautifulsoup4
+#
+###### Requirements with Version Specifiers ######
+#   See https://www.python.org/dev/peps/pep-0440/#version-specifiers
+docopt == 0.6.1             # Version Matching. Must be version 0.6.1
+keyring >= 4.1.1            # Minimum version 4.1.1
+coverage != 3.5             # Version Exclusion. Anything except version 3.5
+Mopidy-Dirble ~= 1.1        # Compatible release. Same as >= 1.1, == 1.*
+
+After you've pulled the repo to your computer/laptop/pi/etc. you can use the terminal to install by typing:
+	pip install -r /path/to/requirements.txt
 
 	
 	
